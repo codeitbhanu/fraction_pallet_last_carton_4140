@@ -1,0 +1,73 @@
+^FX Carton label template for DSD 4140 MCS 6P/MM.
+
+^FX Configure printer with defaults which may have been overridden previously.
+CT~~CD,~CC^~CT~
+^XA~TA000~JSN^LT0^MNW^MTD^PON^PMN^LH0,0^JMA^PR4,4~SD25^JUS^LRN^CI0^XZ
+
+^FX Start to format the label and its contents.
+^XA
+^MMT
+^PW863
+^LL1558
+^LS0
+
+^FX Draw lines to compartmentalise information.
+^FO142,484^GB0,1041,8^FS
+^FO52,430^GB690,0,8^FS
+
+^FX Carton information
+^FT68,1505^A0B,45,45^FH\^FDC/NO.^FS
+^BY2,3,48^FT75,1383^BCB,,N,N
+^FD<CARTON>^FS
+^FT110,1313^A0B,34,33^FH\^FD<CARTON>^FS
+
+^FX Pallet information
+^FT67,973^A0B,45,45^FH\^FDPallet/NO.^FS
+^BY2,3,48^FT73,773^BCB,,N,N
+^FD<PALLET>^FS
+^FT108,715^A0B,34,33^FH\^FD<PALLET>^FS
+
+^FT64,307^A0B,39,38^FH\^FDDStv HD 8S^FS
+^FT120,340^A0B,29,28^FH\^FDDecoders and IUC/SC^FS
+^FT520,365^A0B,29,28^FH\^FDManufacturing Information^FS
+^FT744,362^A0B,28,28^FH\^FDMADE IN SOUTH AFRICA^FS
+^FT785,288^A0B,28,28^FH\^FD<MANF_DATE>^FS
+
+^FX Decoder barcodes
+^BY2,3,40^FT226,948^BCB,,N,N
+^FD>:S>5<STB1_BC>^FS
+^BY2,3,40^FT333,949^BCB,,N,N
+^FD>:S>5<STB2_BC>^FS
+
+
+
+^FX SC/IUC Number Barcodes
+^BY2,3,40^FT226,670^BCB,,N,N
+^FD>;<SC1>^FS
+^BY2,3,40^FT333,671^BCB,,N,N
+^FD>;<SC2>^FS
+
+
+
+^FX IUC/SC number printed
+^FT249,670^A0B,23,24^FH\^FDIUC/SC: <SC1>^FS
+^FT356,671^A0B,23,24^FH\^FDIUC/SC: <SC2>^FS
+
+
+
+^FX Decoder number printed
+^FT249,948^A0B,23,24^FH\^FDSer No: <STB1_TX>^FS
+^FT356,948^A0B,23,24^FH\^FDSer No: <STB2_TX>^FS
+
+
+
+^FX Decoders and IUC/SC list
+^FT145,332^BQN,2,4
+^FH\^FDMA,<DECODER_IUC_LIST>^FS
+
+^FX Manufacturing information
+^FT545,300^BQN,2,4
+^FDMA,DStv HD 8S,<MANF_DATE>,<CARTON>^FS
+
+^FX Quantity of labels to print.
+^PQ1,0,1,Y^XZ
